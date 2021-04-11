@@ -1,0 +1,25 @@
+{{#unless isListEnabled}}
+    <p>A lista não esta ativa</p>
+
+{{else}}
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Donate</li>
+   </ul>
+{{/unless}}
+
+{{#with author}}
+    <h2>{{nome}}</h2>
+    <h2>{{sobrenome}}</h2>
+    <h2>{{project.nome}}</h2>
+{{/with}}
+
+<hr>
+
+{{#with author as |x|}}
+    <h2>{{x.nome}}</h2>
+    <h2>{{x.sobrenome}}</h2>
+    <h2>{{x.project.nome}}</h2>
+{{/with}}
+

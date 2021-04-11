@@ -1,0 +1,37 @@
+<h2 class="mb-4" align="center">Adicionar Burger</h2>
+
+<div class="card mx-auto" align="center" style="width: 30rem; border:none">
+    <div class="card-body">
+        <form method="POST">
+            <label for="burgerName">Nome do Burger:</label>
+            <br>
+            <input type="text" name="burgerName" placeholder="Nome do Burger" class="form-control">
+
+            <button type="submit" id="add" class="btn btn-primary mt-4">Adicionar Burger</button>
+        </form>
+    </div>
+</div>
+
+<hr>
+<h2 class="mb-4" align="center">Lista de Burgers</h2>
+
+<div id="burgerContainer">
+{{#each burgers}}
+    <div class="card mt-2 mx-auto" style="width: 30rem" id="{{id}}">
+        <div class="card-body">
+            <h4>{{burger_name}}</h4>
+            <br>    
+            <button data-id="{{id}}" data-state="{{is_favorite}}" class="btn btn-primary favorite">
+                {{#if is_favorite}}
+                    Remover dos Favoritos
+                {{else}}
+                    Adicionar aos Favoritos
+                {{/if}}
+            </button>
+        </div>
+    </div>
+{{else}}
+{{/each}}
+</div>
+
+<div class="mb-4"></div>

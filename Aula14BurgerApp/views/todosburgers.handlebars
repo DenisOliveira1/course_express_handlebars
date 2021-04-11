@@ -1,0 +1,38 @@
+<h2 class="mb-4" align="center">Favoritos</h2>
+
+<div id="burgerContainer">
+    {{#each burgers}}
+        {{#if is_favorite}}
+            <div class="card mt-2 mx-auto" style="width: 30rem" data-id="{{id}}" id="burger">
+                <div class="card-body">
+                    <h4>{{burger_name}}</h4>
+                    <br>    
+                    <button data-id={{id}} class="btn btn-danger" id="delete">Delete</button>
+                </div>
+            </div>
+        {{else}}
+
+        {{/if}}
+    {{else}}
+    {{/each}}
+
+    <hr>
+    <h2 class="mb-4" align="center">Outros</h2>
+
+    {{#each burgers}}
+        {{#unless is_favorite}}
+            <div class="card mt-2 mx-auto" style="width: 30rem" data-id="{{id}}" id="burger">
+                <div class="card-body">
+                    <h4>{{burger_name}}</h4>
+                    <br>    
+                    <button data-id="{{id}}" class="btn btn-danger" id="delete">Delete</button>
+                </div>
+            </div>
+        {{else}}
+
+        {{/unless}}
+    {{else}}
+    {{/each}}
+</div>
+
+<div class="mb-4"></div>

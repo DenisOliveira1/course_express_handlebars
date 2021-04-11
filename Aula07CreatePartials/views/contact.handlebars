@@ -1,0 +1,90 @@
+<h2>vetor / array</h2>
+
+{{#each people}}
+    <p>{{this}}</p>
+{{else}}
+    <p>Nenhum contato</p>
+{{/each}}
+
+<hr>
+
+{{#each people}}
+    <p>{{.}}</p>
+{{else}}
+    <p>Nenhum contato</p>
+{{/each}}
+
+<hr>
+
+{{#each people as |humano key| }}
+    <p>{{humano}}</p>
+{{else}}
+    <p>Nenhum contato</p>
+{{/each}}
+
+<h2>objeto</h2>
+
+{{#each user }}
+    <p>{{.}}</p>
+{{else}}
+    <p>Nenhum parametro</p>
+{{/each}}
+
+<hr>
+
+{{#each user }}
+    <p>{{this}}</p>
+{{else}}
+    <p>Nenhum parametro</p>
+{{/each}}
+
+<hr>
+
+{{#each user as |parametro key|}}
+    <p>{{parametro}}</p>
+{{else}}
+    <p>Nenhum parametro</p>
+{{/each}}
+
+<h2>parametros do objeto</h2>
+
+{{#each user as |parametro key|}}
+    <p>{{@key}}: {{parametro}}</p>
+{{else}}
+    <p>Nenhum parametro</p>
+{{/each}}
+
+<h2>array de objetos com arrays</h2>
+
+{{#each lists}}
+    {{log this}}{{!-- printa no console do node --}}
+    {{#each this/itens}}{{!--pode usar this/itens ou this.itens, .itens da erro --}}
+        {{this}}{{!-- pode ser . ou this --}}
+    {{else}}
+        Nenhum item
+    {{/each}}
+    <br>{{!-- pula uma linha --}}
+{{else}}
+    <p>Nenhuma lista</p>
+{{/each}}
+
+<hr>
+
+{{#each lists as |xValue xKey|}}
+    {{#each xValue.itens as |yValue yKey|}}
+        {{yValue}}
+    {{else}}
+        Nenhum item
+    {{/each}}
+    <br>
+{{else}}
+    <p>Nenhuma lista</p>
+{{/each}}
+
+<h2>array de objetos</h2>
+
+{{#each friend}}
+    <p>{{name}}</p> {{!-- this.nome tambem pode, .name da erro --}}
+{{else}}    
+    <p>Nenhum amigo</p>
+{{/each}}  
